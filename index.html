@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+<head>
+    <meta charset = "UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <title>PORTFOLIO</title>
+
+    <link rel="stylesheet" href="style.css">
+
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+
+
+<header class="header">
+    <a href="#" class="logo">My Portfolio<span class="animate" style="--i:1;"></span></a>
+
+    <div class="bx bx-menu" id="menu-icon"></div>
+
+
+    <nav class="navbar">
+        <a href="#home" class="active">Home</a>
+        <a href="#about">About</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+
+        <span class="active-nav"></span>
+        <span class="animate" style="--i:2;"></span>
+
+    </nav>
+</header>
+
+<section class="home show-animate" id="home">
+    <div class="home-content">
+        <h1>Hi! I'm <span>Christian Regir</span></h1>
+        <div class="text-animate">
+            <h3>4th Year Student</h3>
+        </div>
+         <p>My portfolio serves as a sort of profile for my passions and skills. It's an illustration where you can take a look at my gallery of my artworks, presenting you
+		    with an insight into the fusion of innovation and technology. Please go into and take a look around.</p>
+    </div>
+
+    <div class = "home-sci">
+        <a href = "https://www.facebook.com/ayemtikoyqtqt"><i class='bx bxl-facebook'></i></a>
+        <a href = "https://www.instagram.com/ayemtikoy_/"><i class='bx bxl-instagram-alt' ></i></a>           
+    </div>
+
+
+    <div class="home-imgHover"></div>
+</section>
+ 
+<!--about section-->
+
+<section class="split-layout">
+
+    <!-- LEFT SIDE : ABOUT -->
+    <div class="left-section">
+
+        <section class="about" id="about">
+            <h2 class="heading">About <span>Me</span></h2>
+
+            <div class="about-img">
+                <img src="picture/formal1.jpg" alt="">
+                <span class="circle-spin"></span>
+            </div>
+
+            <div class="about-content">
+                <h3>Christian Regir</h3>
+
+                <p>
+                       I am an Information Technology student with a strong interest in problem solving,
+                    especially in mathematics and logic-based challenges. While programming can be
+                    demanding, I perform best in analytical and number driven tasks. I also have basic
+                    experience in multimedia design and office productivity tools. I am continuously
+                    exploring my path in the IT field and motivated to learn, improve, and contribute
+                    to meaningful projects.
+                </p>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- RIGHT SIDE : SKILLS / SEMINARS / CONTACT -->
+    <div class="right-section">
+
+        <h2><span>Skills</span></h2>
+        <ul class="skills">
+            <li>Problem-Solving (Math-Oriented)</li>
+            <li>Analytical Thinking</li>
+            <li>Basic Programming Knowledge</li>
+            <li>Multimedia Design</li>
+            <li>Office Productivity Tools</li>
+            <li>Adaptability & Willingness to Learn</li>
+            <li>Time Management</li>
+        </ul>
+
+        <h2><span>Seminars & Organizations</span></h2>
+        <ul>
+            <li>Cloud Computing Strategies</li>
+            <li>Game Testing Best Practices</li>
+            <li>Strategic Project Management</li>
+            <li>That IT Thing Called Multimedia</li>
+            <li>Member – Valenzuela Information Technology Society (VITS)</li>
+        </ul>
+
+        <h2><span>Contact</span></h2>
+        <p>
+            📧 tikoyregir@gmail.com <br>
+            📞 0963 662 6904 <br>
+            📍 Valenzuela City, Philippines
+        </p>
+
+    </div>
+
+</section>
+
+
+
+
+<!--gallery section-->
+
+<section class="gallery" id="gallery">
+    <h6 class="heading">My <span>Gallery</span></h6>
+
+    <div class="banner">
+        <div class="slider" style="--quantity: 13">
+            <div class="item" style="--position: 1"><img src="picture/gallery1.jpg"></div>
+            <div class="item" style="--position: 2"><img src="picture/gallery2.jpg"></div>
+            <div class="item" style="--position: 3"><img src="picture/gallery3.jpg"></div>
+            <div class="item" style="--position: 4"><img src="picture/gallery4.jpg"></div>
+            <div class="item" style="--position: 5"><img src="picture/gallery5.jpg"></div>
+            <div class="item" style="--position: 6"><img src="picture/gallery6.jpg"></div>
+            <div class="item" style="--position: 7"><img src="picture/gallery7.jpg"></div>
+            <div class="item" style="--position: 8"><img src="picture/gallery8.jpg"></div>
+            <div class="item" style="--position: 9"><img src="picture/gallery9.jpg"></div>
+            <div class="item" style="--position: 10"><img src="picture/gallery10.jpg"></div>
+             <div class="item" style="--position: 11"><img src="picture/gallery11.jpg"></div>
+            <div class="item" style="--position: 12"><img src="picture/gallery12.jpg"></div>
+            <div class="item" style="--position: 13"><img src="picture/gallery13.jpg"></div>
+        </div>
+
+    </div>
+</section>
+
+<!--contact section-->
+
+<section class="contact" id="contact">
+
+        <div class="contact-form">
+            <h2 class="heading">Contact <span>Me</span></h2>
+            <p>Please use the contact details provided or the form below to get in touch. I'm eager to speak with you and get this significant conversation started.</p>
+
+            <form action="">
+                <input type="" placeholder="Your Name" required>
+                <input type="email" name="email" id="" placeholder="E-mail" required>
+                <input type="" placeholder="Write a Subject" required>
+                ><textarea name="" id="" cols="30" rows="10" placeholder="Your Message" required>
+
+                </textarea>
+                <input type="submit" name="" value="Submit" class="btn">
+            </form>
+         </div>
+
+         <div class="contact--img">
+            <img src="picture/contactPage.jpg">
+         </div>
+</section>
+
+<footer class="footer">
+    <div class="footer-text">
+        <p>Christian L. Regir</p>
+    </div>
+
+    <div class="footer-iconTop">
+        <a href="#"><i class='bx bx-up-arrow-alt'></i></a>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
