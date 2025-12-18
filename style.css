@@ -112,6 +112,7 @@ section {
     background-position: center;
 }
 
+
 .home-content {
     max-width: 70rem;
 }
@@ -131,11 +132,6 @@ section {
     width: 32.8rem;
 }
 
-.about-content .text-animate {
-    position: relative;
-    width: 32.8rem;
-}
-
 .home-content .text-animate h3 {
     font-size: 3.2rem;
     font-weight: 700;
@@ -145,7 +141,7 @@ section {
     background-repeat: no-repeat;
     -webkit-background-clip: text;
     background-position: -33rem 0;
-    animation: homeBgText 6s linear infinite;
+    animation: homeBgText 5s linear infinite;
     animation-delay: 2s;
 }
 
@@ -158,19 +154,21 @@ section {
     height: 100%;
     border-right: 2px solid yellow;
     z-index: -1;
-    animation: homeCursorText 6s linear infinite;
+    animation: homeCursorText 5s linear infinite;
     animation-delay: 2s;
 }
 
 .home-content p {
     font-size: 1.6rem;
     margin: 2rem 0 4rem;
+    text-align: justify;
+    text-justify: inter-word;
 }
 
 .home-sci {
     position: absolute;
     bottom: 4rem;
-    width: 100px;
+    width: 150px;
     display: flex;
     justify-content: space-between;
 }
@@ -227,15 +225,23 @@ section {
     opacity: .8;
 }
 
-.about {
+.home {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.home-image {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    gap: 2rem;
-    background: var(--second-bg-color);
-    padding-bottom: 6rem;
 }
+
+.home-image .about-img {
+    width: 50rem;
+    height: 50rem;
+}
+
 
 .heading {
     font-size: 5rem;
@@ -278,131 +284,284 @@ span {
     animation: aboutSpinner 8s linear infinite;
 }
 
-.about-content {
-    text-align: center;
-    justify-content: center;
+
+#about {
+    padding-top: 0.5rem;
+    min-height: 100vh;
+    padding-bottom: 0; 
 }
 
-.about-content h3 {
-    font-size: 2.6rem;
-    text-align: center;
-    justify-content: center;
+#about h2:first-child {
+    margin-top: 0;
 }
 
-.about-content .text-animate h3 {
-    font-size: 3.2rem;
-    font-weight: 700;
-    color: transparent;
-    -webkit-text-stroke: .7px var(--main-color);
-    background-image: linear-gradient(var(--main-color), var(--main-color));
-    background-repeat: no-repeat;
-    -webkit-background-clip: text;
-    background-position: -33rem 0;
-    animation: aboutBgText 6s linear infinite;
-    animation-delay: 2s;
-}
-
-.about-content .text-animate h3::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 50rem;
-    width: 50rem;
-    height: 100%;
-    border-left: 2px solid var(--main-color);
-    z-index: -1;
-    animation: homeCursorText 6s linear infinite;
-    animation-delay: 2s;
-}
-
-.about-content p {
-    font-size: 1.6rem;
-    margin:  2rem 0 3rem;
-}
-
-/* LEFT + RIGHT LAYOUT */
-.split-layout {
+.about-section {
     display: flex;
     width: 100%;
     min-height: 100vh;
-}
-
-/* LEFT SIDE */
-.left-section {
-    width: 50%;
-}
-
-/* RIGHT SIDE */
-.right-section {
-    width: 50%;
-}
-
-/* OPTIONAL: better reading on left */
-.left-section .about-content {
-    text-align: left;
-}
-
-/* Optional spacing for lists */
-.about-content ul {
-    margin: 1.5rem 0 3rem;
-    padding-left: 2rem;
-}
-
-.about-content li {
-    font-size: 1.6rem;
-    margin-bottom: 0.8rem;
-}
-
-/* LEFT + RIGHT LAYOUT */
-.split-layout {
-    display: flex;
-    width: 100%;
-    min-height: 100vh;
-}
-
-/* LEFT SIDE */
-.left-section {
-    width: 50%;
-}
-
-/* RIGHT SIDE */
-.right-section {
-    width: 50%;
-    padding: 6rem 4rem;
     background: var(--second-bg-color);
 }
 
-/* Right side text formatting */
+.left-section,
+.right-section {
+    width: 50%;
+    padding: 8rem 5rem;
+}
+
+.left-section h2,
 .right-section h2 {
-    font-size: 2rem;
+    font-size: 2.2rem;
     margin: 3rem 0 1.5rem;
 }
 
+.left-section ul,
 .right-section ul {
     padding-left: 2rem;
     margin-bottom: 3rem;
 }
 
+.left-section li,
 .right-section li {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     margin-bottom: 0.8rem;
 }
 
+.left-section p,
 .right-section p {
     font-size: 1.6rem;
     line-height: 1.8;
 }
 
-.left-section .about-content p {
-    text-align: justify;      /* pantay ang kaliwa at kanan */
-    text-justify: inter-word; /* mas maayos ang spacing */
+@media (max-width: 768px) {
+    .about-section {
+        flex-direction: column;
+    }
+
+    .left-section,
+    .right-section {
+        width: 100%;
+        padding: 5rem 3rem;
+    }
+
+    .header {
+  padding: 1rem 4%;           /* reduce header height */
+  z-index: 120;              /* ensure header stays on top */
+}
+
+.header .logo {
+  font-size: 2rem;           /* smaller label so it doesn't crowd content */
+  white-space: nowrap;       /* keep the label on one line */
+}
+
+.logo { display: none !important; }
+
+/* Push home content down so image sits below header */
+#home {
+  padding-top: 7.5rem;       /* ensure enough gap for the fixed header */
+}
+
+/* Slight tweak: keep image spacing consistent */
+.home-image {
+  margin-top: 1rem;
+}
+
+    /* Mobile: show profile picture first and keep the full name visible */
+
+    .home-image {
+  order: -1; /* show image before the content */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.6rem;
+}
+
+.home-image .about-img {
+  width: 34vw;           /* responsive sizing */
+  max-width: 10rem;     /* limit absolute size */
+  height: auto;
+  z-index: 1;
+}
+
+.about-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Keep heading readable and fully visible */
+.home-content {
+  order: 0;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  overflow: visible;
+}
+
+.home-content h1 {
+  font-size: 3.2rem;     /* smaller for small screens */
+  line-height: 1.15;
+  margin-bottom: .8rem;
+  word-break: break-word;
+}
+
+/* small spacing for subtitle */
+.home-content .text-animate {
+  margin-top: .4rem;
+}
+
+    /* Prevent horizontal pan and cap widths on small screens */
+html, body {
+  overflow-x: hidden !important;
+  touch-action: pan-y;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+}
+
+/* Limit main containers to viewport */
+.home, section, .home-content, .home-imgHover, .container, #gallery .banner {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+/* Make hero text shrink-to-fit */
+.home-content { padding-left: 4%; padding-right: 4%; max-width: 92vw; }
+
+/* Scale avatar & spinner safely */
+.home-image .about-img,
+.about-img {
+  max-width: 80vw;
+  width: auto;
+  height: auto;
+  margin: 0 auto;
+}
+.about-img img,
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Defensive: ensure absolute elements don't push viewport */
+.home-imgHover { left: 0; right: 0; width: 100%; max-width: 100vw; }
+.header { left: 0; right: 0; width: 100%; }
+
+/* Gallery slider safety */
+#gallery .banner { overflow-x: hidden; }
+#gallery .slider { left: 50%; transform: translateX(-50%); }
+
+/* Remove previous global '*' max-width if it caused layout issues.
+   If you prefer the defensive '*' rule, leave it; otherwise replace with targeted rules above. */
+
+    html, body {
+  overflow-x: hidden;            /* block horizontal scroll */
+  touch-action: pan-y;           /* prefer vertical scrolling on touch devices */
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+}
+
+/* Ensure main containers never exceed viewport */
+.home, section, .home-content, .home-imgHover {
+  width: 100%;
+  max-width: 100vw;
+  box-sizing: border-box;
+}
+
+/* Make animated text and content shrink to fit */
+.home-content .text-animate {
+  width: auto;
+  display: inline-block;
+}
+
+/* Ensure images and avatar scale and cannot overflow horizontally */
+.about-img,
+.home-imgHover .about-img,
+.about-img img,
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Safe mobile size for avatar + spinner */
+.about-img {
+  width: 18rem;
+  height: 18rem;
+  margin: 0 auto;
+}
+
+/* Keep spinner from forcing overflow */
+.about-img .circle-spin {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+/* Optional: prevent any rogue element from exceeding viewport width */
+* {
+  max-width: 100vw;
+}
+
+    /* Mobile-friendly tweaks: show avatar + spinner in Home and scale it down */
+.home-imgHover {
+    display: block !important; /* override earlier rule that hides it */
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 2rem 0;
+    margin-top: 2rem;
+    background: transparent;
+    transition: .5s;
+}
+
+.home-imgHover .about-img {
+    width: 18rem;
+    height: 18rem;
+    margin: 0 auto;
+}
+
+.about-img {
+    width: 18rem;
+    height: 18rem;
+    border-radius: 50%;
+}
+
+.about-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* Make the spinner thinner and slightly faster on mobile */
+.about-img .circle-spin {
+    width: 100%;
+    height: 100%;
+    border-top: .15rem solid var(--second-bg-color);
+    border-bottom: .15rem solid var(--second-bg-color);
+    border-left: .15rem solid var(--main-color);
+    border-right: .15rem solid var(--main-color);
+    animation: aboutSpinner 6s linear infinite;
+}
+
+/* Small extra spacing / layout tweaks */
+.home {
+    padding: 0 2%;
+}
+.home-content {
+    padding: 1.5rem 1rem;
+}
+.home-sci {
+    margin-top: 2rem;
+}
+
 }
 
 
-/* ===== 3D Gallery Banner (Gallery Section Only) ===== */
 #gallery .banner{
     width: 100%;
-    height: 70vh;              /* reduced height */
+    height: 70vh;  
     text-align: center;
     overflow: hidden;
     position: relative;
@@ -608,8 +767,8 @@ section {
         width: 0;
     }
 
-    65%, 79%, 85% {
-        width: 100%;
+    58%, 79%, 87% {
+        width: 85%;
         opacity: 1;
     }
 
@@ -670,62 +829,6 @@ section {
     align-items: center;
     justify-content: center;
 }
-
-.gallery {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.img-box {
-    width: 100px;
-    height: 400px;
-    margin: 10px;
-    border-radius: 50px;
-    background: url(picture/gallery1.jpg);
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    transition: width 0.5s;
-}
-
-.img-box:nth-child(2){
-    background: url(picture/gallery2.jpg);
-    background-size: cover;
-    background-position: center;
-}
-
-.img-box:nth-child(3){
-    background: url(picture/gallery3.jpg);
-    background-size: cover;
-    background-position: center;
-}
-
-.img-box:nth-child(4){
-    background: url(picture/gallery4.jpg);
-    background-size: cover;
-    background-position: center;
-}
-
-.img-box h3 {
-    color: black;
-    position: absolute;
-    bottom: 0;
-    left: 30px;
-    opacity: 0;
-    transition: bottom 0.5s, opacity 0.5s;
-}
-
-.img-box:hover {
-    width: 300px;
-    cursor: pointer;
-}
-
-.img-box:hover h3 {
-    opacity: 1;
-    bottom: 25px;
-}
-
 
 .contact {
     background: var(--second-bg-color);
@@ -835,4 +938,129 @@ section {
         margin-bottom: 30px;
     }
     
+}
+
+/* =========================
+   MOBILE RESPONSIVE FIX
+   ========================= */
+@media (max-width: 768px) {
+
+    /* Global text scaling */
+    html {
+        font-size: 55%;
+    }
+
+    #menu-icon {
+    display: block !important;
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 300; /* stays above everything */
+  }
+
+  .navbar {
+    position: fixed !important;
+    top: 0;
+    right: -120% !important;   /* hidden off-screen on the right */
+    height: 100vh;
+    width: 80%;
+    max-width: 340px;
+    padding: 3.2rem 1.2rem;
+    background: var(--bg-color);
+    box-shadow: -6px 0 30px rgba(0,0,0,0.45);
+    transition: right .28s ease;
+    z-index: 250;
+    overflow-y: auto;
+    text-align: left;
+  }
+
+  .navbar.active {
+    right: 0 !important;      /* slide in from the right */
+    left: auto !important;
+  }
+
+  .navbar a {
+    margin-left: 0;
+    color: var(--text-color);
+    display: block;
+    padding: .8rem 0;
+  }
+
+    /* HOME SECTION */
+    .home {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .home-content h1 {
+        font-size: 4.2rem;
+    }
+
+    .home-content .text-animate h3 {
+        font-size: 2.6rem;
+    }
+
+    .home-sci {
+        position: static;
+        margin-top: 3rem;
+        justify-content: center;
+        gap: 1.5rem;
+    }
+
+    .home-imgHover {
+        display: none;
+    }
+
+
+    .about-section {
+        flex-direction: column;
+        min-height: auto;
+    }
+
+    .left-section,
+    .right-section {
+        width: 100%;
+        padding: 4rem 2rem;
+    }
+
+    .left-section h2,
+    .right-section h2 {
+        font-size: 2rem;
+        margin-top: 2rem;
+    }
+
+    .left-section li,
+    .right-section li,
+    .left-section p,
+    .right-section p {
+        font-size: 1.4rem;
+    }
+
+    #gallery .content h1 {
+        font-size: 4rem;
+    }
+
+    #gallery .slider {
+        transform: scale(0.8);
+    }
+
+    .contact {
+        grid-template-columns: 1fr;
+        padding: 4rem 2rem;
+    }
+
+    .contact-form h1 {
+        font-size: 4rem;
+    }
+
+    .contact-img {
+        display: none;
+    }
+
+    .footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+    }
 }
